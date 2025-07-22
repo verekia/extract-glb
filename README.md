@@ -9,3 +9,16 @@ Write the input file in `extract-glb.ts`, then run `bun extract-glb.ts` (or othe
 ## Result
 
 See `cube.glb.json` for an example of result.
+
+## Gltf.report Alternative
+
+Alternatively, to list the content of an attribute such as `POSITION`, run the following snippet in the script tab of [gltf.report](https://gltf.report/):
+
+```js
+for (const mesh of document.getRoot().listMeshes()) {
+  for (const prim of mesh.listPrimitives()) {
+    const position = prim.getAttribute('POSITION');
+    console.log(position.getArray());
+  }
+}
+```
