@@ -1,8 +1,8 @@
 import * as fs from 'fs'
 import * as path from 'path'
 
-// const INPUT_FILE = 'cube.glb' // GLB
-const INPUT_FILE = 'cube.gltf'  // GLTF + BIN file
+const INPUT_FILE = 'cube.glb' // GLB
+// const INPUT_FILE = 'cube.gltf'  // GLTF + BIN file
 
 const COMPONENT_TYPES = {
   5120: { name: 'BYTE', size: 1, array: Int8Array },
@@ -80,8 +80,9 @@ const extractAccessorData = (accessor: any, bufferView: any, binaryBuffer: Buffe
   // Extract the raw bytes
   const rawBytes = binaryBuffer.subarray(byteOffset, byteOffset + byteLength)
 
-  // Create typed array from the raw bytes
-  const typedArray = new componentType.array(rawBytes)
+  // Create typed array from the raw bytes - need to properly handle Buffer to ArrayBuffer conversion
+  const arrayBuffer = rawBytes.buffer.slice(rawBytes.byteOffset, rawBytes.byteOffset + rawBytes.length)
+  const typedArray = new componentType.array(arrayBuffer)
 
   // Convert to regular array for JSON serialization
   const values = Array.from(typedArray)
