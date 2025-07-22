@@ -22,3 +22,7 @@ for (const mesh of document.getRoot().listMeshes()) {
   }
 }
 ```
+
+## Disclaimer
+
+Vibe-coded for myself. Use at your own risk.
