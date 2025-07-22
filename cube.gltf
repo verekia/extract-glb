@@ -21,16 +21,15 @@
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"MyMaterial",
+			"name":"Red",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
-					0.8000074625015259,
-					0.030859511345624924,
-					0.034238044172525406,
+					1,
+					0,
+					0,
 					1
 				],
-				"metallicFactor":0,
-				"roughnessFactor":0.5
+				"metallicFactor":0
 			}
 		}
 	],

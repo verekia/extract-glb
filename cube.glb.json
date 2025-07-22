@@ -11,11 +11,10 @@
   "materials": [
     {
       "index": 0,
-      "name": "MyMaterial",
+      "name": "Red",
       "doubleSided": true,
-      "baseColor": [0.8000074625015259, 0.030859511345624924, 0.034238044172525406, 1],
-      "metallic": 0,
-      "roughness": 0.5
+      "baseColor": [1, 0, 0, 1],
+      "metallic": 0
     }
   ],
   "meshes": [
@@ -24,7 +23,7 @@
       "primitives": [
         {
           "materialIndex": 0,
-          "materialName": "MyMaterial",
+          "materialName": "Red",
           "attributes": {
             "POSITION": {
               "type": "VEC3",
